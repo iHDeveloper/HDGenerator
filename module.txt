@@ -1,0 +1,9 @@
+{
+    "id" : "HDGenerator",
+    "version" : "0.1.0-SNAPSHOT",
+    "author" : "",
+    "displayName" : "HDGenerator",
+    "description" : "",
+    "dependencies" : [],
+    "serverSideOnly" : false
+}
