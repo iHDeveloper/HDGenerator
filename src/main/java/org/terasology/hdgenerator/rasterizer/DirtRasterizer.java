@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.hdgenerator.raterizer;
+package org.terasology.hdgenerator.rasterizer;
 
 import org.terasology.math.ChunkMath;
 import org.terasology.math.geom.Vector3i;
@@ -25,7 +25,7 @@ import org.terasology.world.generation.Region;
 import org.terasology.world.generation.WorldRasterizer;
 import org.terasology.world.generation.facets.SurfaceHeightFacet;
 
-public class DirtRaterizer implements WorldRasterizer {
+public class DirtRasterizer implements WorldRasterizer {
 
     private Block dirt;
 
