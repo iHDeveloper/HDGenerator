@@ -15,5 +15,25 @@
  */
 package org.terasology.hdgenerator;
 
-public class HDGenerator {
+import org.terasology.engine.SimpleUri;
+import org.terasology.registry.In;
+import org.terasology.world.generation.BaseFacetedWorldGenerator;
+import org.terasology.world.generation.WorldBuilder;
+import org.terasology.world.generator.RegisterWorldGenerator;
+import org.terasology.world.generator.plugin.WorldGeneratorPluginLibrary;
+
+@RegisterWorldGenerator(id = "hdgeneator", displayName = "HD Generator")
+public class HDGenerator extends BaseFacetedWorldGenerator {
+
+    @In
+    private WorldGeneratorPluginLibrary pluginLibrary;
+
+    public HDGenerator(SimpleUri uri) {
+        super(uri);
+    }
+
+    @Override
+    protected WorldBuilder createWorld() {
+        return new WorldBuilder(pluginLibrary);
+    }
 }
