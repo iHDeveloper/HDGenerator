@@ -15,6 +15,7 @@
  */
 package org.terasology.hdgenerator;
 
+import org.terasology.core.world.generator.facetProviders.SeaLevelProvider;
 import org.terasology.engine.SimpleUri;
 import org.terasology.hdgenerator.provider.DirtProvider;
 import org.terasology.hdgenerator.raterizer.DirtRaterizer;
@@ -38,6 +39,7 @@ public class HDGenerator extends BaseFacetedWorldGenerator {
     protected WorldBuilder createWorld() {
         return new WorldBuilder(pluginLibrary)
                 .addProvider(new DirtProvider())
+                .addProvider(new SeaLevelProvider(0))
                 .addRasterizer(new DirtRaterizer());
     }
 }
