@@ -17,7 +17,9 @@ package org.terasology.hdgenerator;
 
 import org.terasology.core.world.generator.facetProviders.SeaLevelProvider;
 import org.terasology.engine.SimpleUri;
+import org.terasology.hdgenerator.provider.GrassProvider;
 import org.terasology.hdgenerator.provider.StoneProvider;
+import org.terasology.hdgenerator.rasterizer.GrassRasterizer;
 import org.terasology.hdgenerator.rasterizer.StoneRasterizer;
 import org.terasology.registry.In;
 import org.terasology.world.generation.BaseFacetedWorldGenerator;
@@ -39,7 +41,9 @@ public class HDGenerator extends BaseFacetedWorldGenerator {
     protected WorldBuilder createWorld() {
         return new WorldBuilder(pluginLibrary)
                 .addProvider(new StoneProvider())
+                .addProvider(new GrassProvider())
                 .addProvider(new SeaLevelProvider(0))
-                .addRasterizer(new StoneRasterizer());
+                .addRasterizer(new StoneRasterizer())
+                .addRasterizer(new GrassRasterizer());
     }
 }
