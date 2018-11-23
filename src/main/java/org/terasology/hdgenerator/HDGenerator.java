@@ -16,6 +16,8 @@
 package org.terasology.hdgenerator;
 
 import org.terasology.engine.SimpleUri;
+import org.terasology.hdgenerator.provider.DirtProvider;
+import org.terasology.hdgenerator.raterizer.DirtRaterizer;
 import org.terasology.registry.In;
 import org.terasology.world.generation.BaseFacetedWorldGenerator;
 import org.terasology.world.generation.WorldBuilder;
@@ -34,6 +36,8 @@ public class HDGenerator extends BaseFacetedWorldGenerator {
 
     @Override
     protected WorldBuilder createWorld() {
-        return new WorldBuilder(pluginLibrary);
+        return new WorldBuilder(pluginLibrary)
+                .addProvider(new DirtProvider())
+                .addRasterizer(new DirtRaterizer());
     }
 }
