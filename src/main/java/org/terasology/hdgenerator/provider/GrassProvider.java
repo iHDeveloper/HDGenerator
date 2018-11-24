@@ -36,7 +36,7 @@ public class GrassProvider implements FacetProvider {
         SurfaceHeightFacet facet = new SurfaceHeightFacet(region.getRegion(), border);
         Rect2i processRegion = facet.getWorldRegion();
         for (BaseVector2i position : processRegion.contents()) {
-            facet.setWorld(position, 1);
+            facet.setWorld(position, 0);
         }
         region.setRegionFacet(SurfaceHeightFacet.class, facet);
     }
